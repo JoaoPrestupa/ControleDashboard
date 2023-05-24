@@ -5,18 +5,20 @@ import { AppRoutes } from "./routes";
 import { AppThemeProvider } from "./shared/contexts/themeContexts";
 import { MenuLateral } from "./shared/components";
 import { Menu } from "@mui/icons-material";
+import { DrawerProvider } from "./shared/contexts";
 
 
 
 export const App = () => {
   return (
     <AppThemeProvider>
-      <BrowserRouter>
-        <MenuLateral>
-          <AppRoutes/>
-        </MenuLateral>
-      </BrowserRouter>
+      <DrawerProvider>
+        <BrowserRouter>
+          <MenuLateral>
+            <AppRoutes/>
+          </MenuLateral>
+        </BrowserRouter>
+      </DrawerProvider>
     </AppThemeProvider>
-    
   );
 }
